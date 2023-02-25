@@ -69,8 +69,14 @@ appimage:
 	pwd
 	ls -aFl
 	cd dist/
+	pwd
+	ls -aFl
 	curl -L https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage > appimagetool
 	chmod +x appimagetool
+	pwd
+	ls -aFl
+	echo comictagger:
+	ls -aFl comictagger/
 	ln -s comictagger/comictaggerlib/graphics/app.png comictagger/app.png
 	pwd
 	ls -aFl
