@@ -64,6 +64,10 @@ dist:
 	cd dist && zip -m -r $(FINAL_NAME).zip $(APP_NAME)
 
 appimage:
+	pwd
+	ls -aFl
+	ls -aFl dist
+	ls -aFl dist/comictagger
 	cp AppRun* dist/comictagger/
 	curl -L https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage > dist/appimagetool
 	chmod +x dist/appimagetool
