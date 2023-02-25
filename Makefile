@@ -64,13 +64,12 @@ dist:
 	cd dist && zip -m -r $(FINAL_NAME).zip $(APP_NAME)
 
 appimage:
-	pyinstaller -y comictagger.spec
 	cp AppRun* dist/comictagger/
-	pwd
-	ls -aFl dist/comictagger
 	curl -L https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage > dist/appimagetool
 	chmod +x dist/appimagetool
 	cd dist/comictagger/ && ln -s comictaggerlib/graphics/app.png app.png
 	pwd
+	ls -aFl
+	ls -aFl dist
 	ls -aFl dist/comictagger
 	cd dist && ./appimagetool $(APP_NAME)
