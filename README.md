@@ -170,3 +170,4 @@ choco install comictagger
     </td></tr>
 </table>
 <!-- readme: beville,davide-romanini,collaborators,contributors -end -->
+
