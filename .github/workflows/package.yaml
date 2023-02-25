@@ -63,16 +63,20 @@ jobs:
           python -m flake8
           python -m pytest
 
-      - name: "Publish distribution 📦 to PyPI"
-        if: startsWith(github.ref, 'refs/tags/') && runner.os == 'Linux'
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          password: ${{ secrets.PYPI_API_TOKEN }}
-          packages_dir: dist
+      # - name: "Publish distribution 📦 to PyPI"
+      #   if: startsWith(github.ref, 'refs/tags/') && runner.os == 'Linux'
+      #   uses: pypa/gh-action-pypi-publish@release/v1
+      #   with:
+      #     password: ${{ secrets.PYPI_API_TOKEN }}
+      #     packages_dir: dist
 
       - name: Build PyInstaller package
         run: |
           make dist
+
+      - name: Build AppImage
+        run: |
+          make appimage
 
       - name: Get release name
         if: startsWith(github.ref, 'refs/tags/')

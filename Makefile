@@ -62,3 +62,9 @@ $(INSTALL_STAMP): $(PYTHON_VENV) requirements.txt requirements_dev.txt
 dist:
 	pyinstaller -y comictagger.spec
 	cd dist && zip -m -r $(FINAL_NAME).zip $(APP_NAME)
+
+appimage:
+	pyinstaller -y comictagger.spec
+	curl -L https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage > dist/appimagetool
+	chmod +x dist/appimagetool
+	cd dist && ./appimagetool $(APP_NAME)
