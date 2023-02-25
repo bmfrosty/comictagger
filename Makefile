@@ -65,12 +65,15 @@ dist:
 
 appimage:
 	pyinstaller -y comictagger.spec
-	curl -L https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage > appimagetool
-	chmod +x appimagetool
+	cp AppRun* dist/comictagger/
 	pwd
 	ls -aFl
-	cp AppRun* dist/
-	echo dist:
-	ls -aFl dist/
-	ln -s dist/comictaggerlib/graphics/app.png dist/app.png
-	./appimagetool dist
+	cd dist/
+	curl -L https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage > appimagetool
+	chmod +x appimagetool
+	ln -s comictagger/comictaggerlib/graphics/app.png comictagger/app.png
+	pwd
+	ls -aFl
+	echo comictagger:
+	ls -aFl comictagger/
+	./appimagetool $(APP_NAME)
