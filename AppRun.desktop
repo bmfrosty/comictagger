@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=ComicTagger
+Exec=./comictagger %F
+Icon=app
+Type=Application
+Categories=Graphics;
