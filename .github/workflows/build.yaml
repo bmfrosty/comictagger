@@ -104,12 +104,17 @@ jobs:
         run: |
           make dist
 
+      - name: Build AppImage
+        run: |
+          make appimage
+
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
           name: "${{ format('ComicTagger-{0}', runner.os) }}"
           path: |
             dist/*.zip
+            dist/*.AppImage
 
       - name: PyTest
         run: |
