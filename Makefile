@@ -69,4 +69,8 @@ appimage:
 	chmod +x appimagetool
 	pwd
 	ls -aFl
+	cp AppRun* dist/
+	echo dist:
+	ls -aFl dist/
+	ln -s dist/comictaggerlib/graphics/app.png dist/app.png
 	./appimagetool dist

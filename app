@@ -1,1 +1,0 @@
-comictaggerlib/graphics/app.png
