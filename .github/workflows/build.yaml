@@ -114,7 +114,7 @@ jobs:
           name: "${{ format('ComicTagger-{0}', runner.os) }}"
           path: |
             dist/*.zip
-            dist/*.AppImage
+            *.AppImage
 
       - name: PyTest
         run: |
