@@ -104,6 +104,11 @@ jobs:
         run: |
           make dist
 
+      - name: build
+        run: |
+          make appimage
+        if: runner.os == 'Linux'
+
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
         with:
