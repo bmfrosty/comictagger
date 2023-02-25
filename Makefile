@@ -67,8 +67,4 @@ dist:
 	cd dist/comictagger/ && ln -s comictaggerlib/graphics/app.png app.png
 	cd dist && ./appimagetool $(APP_NAME)
 	cd dist && zip -m -r $(FINAL_NAME).zip $(APP_NAME)
-	pwd
-	ls -aFl
-
-appimage:
-	pwd
+	ls -aFl dist
