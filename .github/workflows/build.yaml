@@ -115,6 +115,12 @@ jobs:
           name: "${{ format('ComicTagger-{0}', runner.os) }}"
           path: |
             dist/*.zip
+
+      - name: Archive production artifacts - appimage
+        uses: actions/upload-artifact@v2
+        with:
+          name: "${{ format('ComicTagger-{0}', runner.os) }}"
+          path: |
             dist/*.AppImage
 
       - name: PyTest
